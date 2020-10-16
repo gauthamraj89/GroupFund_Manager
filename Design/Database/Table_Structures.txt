@@ -1,23 +1,38 @@
-<Planned Table Name>
+<Planned Table Name> -- <Purpose of the table>
 	<Column_Name	Datatype	Key/Indexing(optional)>
 
-Members:
-	Sl_no	Number	(Primary_Key)
-	Name	Char(100)
-	DOB/WDAY	Date
+Members: -- Basic Members details and their current status
+	Sl_no					Number		(Primary_Key)
+	Name					Char(100)
+	DOB/WDAY				Date
 	Current_Member_Status	Boolean
-	Family_group	Number	(Foreign_Key)
-	Joined_On	Date
-	Left_On	Date
+	Family_group			Number		(Foreign_Key)
+	Joined_On				Date
+	Left_On					Date
 
-Family:
-	Sl_no	Number	(Primary_Key)
-	Family_head	Char(100)
+Family: -- To group members based on their family. Helps in reporting and extracting data
+	Sl_no					Number		(Primary_Key)
+	Family_head				Char(100)
 	
-Expense:
-	Expense_Date	Date
-	Expense_Det	Char(100)
-	Expense_cost	Double(6,2)
+Expense: -- Any expense made for the fund. Including meeting expense
+	Expense_Date			Date
+	Expense_Det				Char(100)
+	Expense_cost			Double(6,2)
 	
-Meeting:
+Meeting: -- Table to capture all decisions made during meeting
+	Meeting_date			Date
+	MOM						Char(1000)
+
+RD: -- RD opened on behalf of fund
+	Active					Boolean
+	Start_date				Date
+	Payable					Double(4,2)
+	Maturity_date			Date
+	Total_Paid				Double(5,2)
+	Interest				Double(4,2)
+	Maturity_value			Double(5,2)
+
+Monthly_sheet:
+	Month					date
+	Sl_no					Number		(Foreign_Key)
 	
