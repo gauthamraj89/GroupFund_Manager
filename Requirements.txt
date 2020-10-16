@@ -4,6 +4,8 @@ Requirements:
 -> Person-wise balance & dues on monthly basis
 -> Family-wise balance & dues on monthly basis
 -> Yearly balance sheets (6 month if possible)
+-> Paid/not paid on monthly sheet(as a tick mark next to their names).
+-> paid in excess/partial and adjust for future months in case of excess.
 
 
 Data captured:
@@ -39,3 +41,8 @@ Data captured:
 	
 	MOM
 		- Text
+	
+	Payments:
+		- Payment Date
+		- Paid by
+		- Amount
