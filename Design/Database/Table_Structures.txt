@@ -2,7 +2,7 @@
 	<Column_Name	Datatype	Key/Indexing(optional)>
 
 Members: -- Basic Members details and their current status
-	Sl_no					Number		(Primary_Key)
+	User_sl_no				Number		(Primary_Key)
 	Name					Char(100)
 	DOB/WDAY				Date
 	Current_Member_Status	Boolean
@@ -32,7 +32,32 @@ RD: -- RD opened on behalf of fund
 	Interest				Double(4,2)
 	Maturity_value			Double(5,2)
 
-Monthly_sheet:
+Monthly_sheet: -- Monthly sheet with individual user transaction/balance
 	Month					date
-	Sl_no					Number		(Foreign_Key)
-	
+	User_sl_no				Number		(Foreign_Key)
+	Loan_outstanding			Double(6,2)
+	Loan_return				Double(6,2)
+	Fresh_Loan				Double(6,2)
+	B_W_Day					Double(4,2)
+	Closing_balance				Double(6,2)
+
+Overall_Monthly: -- Monthly overall balance sheet
+	Month					Date
+	Opening_Cash				Double(6,2)
+	Opening_Loan				Double(6,2)
+	Fresh_Loan				Double(6,2)
+	Loan_Return				Double(6,2)
+	W_B_Day_Paid				Double(4,2)
+	Total_Closing_Bal			Double(6,2)
+
+Key_Comp: -- Table to hold key components which are common to all members (ex. Interest rate, Subscription, etc.,)
+	Comp_Name				Char(100)
+	Comp_Begin				Date
+	Comp_Upto				Date
+	Comp_Value				Double(5,2)
+
+Payments: -- Table to track all payments rec'd from members towards their regular/monthly payments.
+	Payment_date				Date
+	Paid_by					Number		(Foreign Key)
+	Amount					Double(6,2)
+	Payment_Mode				Char(1)
